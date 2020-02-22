@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func systemNameVersionSwitch(_ sender: UISwitch) {
+        let userDefaults = UserDefaults(suiteName: "group.com.van.demo")
+        userDefaults?.set(NSNumber(value: sender.isOn), forKey: "SystemNameVersion")
+    }
+    
 }
 
